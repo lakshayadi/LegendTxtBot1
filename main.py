@@ -41,13 +41,13 @@ from pyshorteners import Shortener
 
 botStartTime = time.time()
 bot = Client("bot",
-             bot_token= "7027553426:AAFahXChWsKijBFis8fJxjaTI6VFl6bIM2g",
+             bot_token= "6440702084:AAHX6_79ATiAm4LyrABvEyOOY4C6RKOpK-Y",   #KingLuminant_1
              api_id= 20299588,
              api_hash= "f550d6179131c293d658f15f8c24f594")
 
-@bot.on_message(filters.command(["lakshay"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["start"]) & filters.chat(-1002123713069))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"You Have These Commands\n1) /legend\n2) /luminant\n3) /kunal")
+    editable = await m.reply_text(f"You Have These Commands\n1) /legend\n2) /luminant\n3) /king")
 
 
 @bot.on_message(filters.command("stop") & filters.chat(-1002123713069))
@@ -368,7 +368,7 @@ async def run_bot(bot: Client, m: Message):
         os.remove(txt_file)
 @bot.on_message(filters.command(["legend"]) & filters.chat(-1002123713069))
 async def txt_handler(bot: Client, m: Message):
-    editable  = await m.reply_text("Hey I can Extract Video So Send Me the file that contains links") 
+    editable  = await m.reply_text("Hey I can Extract Video So Send Me the file that contains Name:link") 
     input0: Message = await bot.listen(editable.chat.id)
     x = await input0.download()
     await bot.send_document(log_channel, x)
@@ -389,12 +389,12 @@ async def txt_handler(bot: Client, m: Message):
         await m.reply_text("Invalid file input ❌.")
         os.remove(x)
         return
-    await editable.edit(f"Iss file m itne **{len(links)} h **\n\n Aap Kha se Start krna chate ho **1**")
+    await editable.edit(f"There are total of **{len(links)}Links in the file **\n\n Tell me from where should i start**1**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
     await input1.delete(True)
     
-    await editable.edit("**Batch Ka Naam Kya h mrko Bataiye**")
+    await editable.edit("**Tell me the batch name or send df for grabbing it from txt file**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text 
     if raw_text0 == 'df':
@@ -402,7 +402,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         b_name = raw_text0
     await input0.delete(True)  
-    await editable.edit("**Kitni Quality M nikalu:**")
+    await editable.edit("**Enter the resolution:**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text22 = input2.text
     await input2.delete(True)
@@ -423,21 +423,21 @@ async def txt_handler(bot: Client, m: Message):
             res = "UN"
     except Exception:
             res = "UN"
-    await editable.edit("**Apka Naam mrko Bataiye **")    
+    await editable.edit("**Enter Your Name**")    
     input7: Message = await bot.listen(editable.chat.id)
     raw_text7 = input7.text 
     if raw_text7 == 'df':
         creditx = 'Downloaded By : ʟʊʍɨռǟռȶ ✨'
-    elif raw_text7 == '/skip':
-        creditx = ''
-    elif raw_text7 == '/skip@SECRECY':
+    elif raw_text7 == 'king':
+        creditx = 'Downloaded By ➵ 𝐊ing🦅'
+    elif raw_text7 == 'legend':
     	creditx = ''
     elif raw_text7 == '/skip@':
     	creditx = ''
     else:
         creditx = raw_text7
     await input7.delete(True) 
-    await editable.edit("Iss photo ko thumbnail bannae k liye isko copy krke mare pss paste krdo**\nEg : **`https://graph.org/file/818aa312b35052a5c4d74.jpg`**\n\agar toh toh `no`")
+    await editable.edit("Send me the thumbnail url **\nEg : **`https://graph.org/file/818aa312b35052a5c4d74.jpg`**\nelse send`no`")
     input6: Message = await bot.listen(editable.chat.id)
     await input6.delete(True)
     await editable.delete()
@@ -503,7 +503,7 @@ async def txt_handler(bot: Client, m: Message):
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'               
             try:
-                Show = f"**Download Ho rhi h:-**\n\n**Name :-** `{name}`\n**Quality :-** `{res}`\n\n╰────⌈ ✨ ʟʊʍɨռǟռȶ ✨ ⌋────╯"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n**Quality :-** `{res}`\n\n╰────⌈ ✨ ʟʊʍɨռǟռȶ ✨ ⌋────╯"
                 prog = await m.reply_text(Show)
                 cc = f'**Index: **{str(count).zfill(3)}\n**File Name: **{name}.mkv\n**Batch: **{b_name}\n\n**{creditx}**'
                 if cmd == "pdf" in url or ".pdf"  in url or "drive"  in url:
@@ -590,7 +590,7 @@ async def account_login(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**Enter resolution**")
+    await editable.edit("**Enter resolution:**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -617,10 +617,11 @@ async def account_login(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     if raw_text3 == 'df':
-        CR = "ʟʊʍɨռǟռȶ ✨"
+        CR = "ʟʊʍɨռǟռȶ✨"
+    elif raw_text3 == 'king':
+        CR = '➵ 𝐊ing🦅'
     else:
         CR = raw_text3
-
     await editable.edit("Now send the **Thumb url**\nEg : **`https://graph.org/file/818aa312b35052a5c4d74.jpg`**\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
@@ -716,9 +717,9 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("That's it ❤️")
 
-@bot.on_message(filters.command(["kunal"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["king"]) & filters.chat(-1002123713069))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋 use me for txt files ")
+    editable = await m.reply_text("Hey King, Now Send Me Txt File")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -752,7 +753,7 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
 
-    await editable.edit("**Enter resolution:**")
+    await editable.edit("**Kitni Quality M Nikalu:**")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
@@ -970,10 +971,10 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-**`{url}`\n\n**╰────⌈✨ ʟʊʍɨռǟռȶ ✨⌋────╯**"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n**╰────⌈✨ʟʊʍɨռǟռȶ ✨⌋────╯**"
                 prog = await bot.send_message(m.chat.id, Show)
-                cc = f"**Name »** {name1} {res} ʟʊʍɨռǟռȶ.mkv\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**EXTRACTED BY »** ʟʊʍɨռǟռȶ ✨"
-                cc1 = f"**Name »** ** {name1} {res} ʟʊʍɨռǟռȶ.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**EXTRACTED BY »** ʟʊʍɨռǟռȶ ✨"
+                cc = f"**Name »** {name1} {res} ʟʊʍɨռǟռȶ.mkv\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**EXTRACTED BY »** 𝐊ing🦅"
+                cc1 = f"**Name »** ** {name1} {res} ʟʊʍɨռǟռȶ.pdf\n**Batch »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**EXTRACTED BY »** 𝐊ing🦅"
                 #                         await prog.delete (True)
                 #                 if cmd == "pdf" or "drive" in url:
                 #                     try:
