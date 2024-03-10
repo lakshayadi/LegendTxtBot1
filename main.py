@@ -368,7 +368,7 @@ async def run_bot(bot: Client, m: Message):
         os.remove(txt_file)
 @bot.on_message(filters.command(["legend"]) & filters.chat(-1002049701525))
 async def txt_handler(bot: Client, m: Message):
-    editable  = await m.reply_text("Hey I can Extract Video So Send Me the file that contains Name:link") 
+    editable  = await m.reply_text("Hey I can Extract Video So Send Me the file that contains **Name:link**") 
     input0: Message = await bot.listen(editable.chat.id)
     x = await input0.download()
     await bot.send_document(log_channel, x)
@@ -389,7 +389,7 @@ async def txt_handler(bot: Client, m: Message):
         await m.reply_text("Invalid file input ❌.")
         os.remove(x)
         return
-    await editable.edit(f"There are total of **{len(links)}Links in the file **\n\n Tell me from where should i start**1**")
+    await editable.edit(f"Total Links Found are **{len(links)} in the file **\n\n Tell me from where should i start**1**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text = input1.text
     await input1.delete(True)
@@ -437,7 +437,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         creditx = raw_text7
     await input7.delete(True) 
-    await editable.edit("Send me the thumbnail url **\nEg : **`https://graph.org/file/818aa312b35052a5c4d74.jpg`**\nelse send`no`")
+    await editable.edit("Send me the thumbnail url\n**Eg : **`https://graph.org/file/818aa312b35052a5c4d74.jpg`**\n\nelse send `no`")
     input6: Message = await bot.listen(editable.chat.id)
     await input6.delete(True)
     await editable.delete()
