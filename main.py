@@ -45,12 +45,12 @@ bot = Client("bot",
              api_id= 20299588,
              api_hash= "f550d6179131c293d658f15f8c24f594")
 
-@bot.on_message(filters.command(["start"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["start"]) & filters.chat(-1002049701525))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"You Have These Commands\n1) /legend\n2) /luminant\n3) /king")
 
 
-@bot.on_message(filters.command("stop") & filters.chat(-1002123713069))
+@bot.on_message(filters.command("stop") & filters.chat(-1002049701525))
 async def restart_handler(bot: Client, m: Message):
     await m.reply_text("**⚠️ Stopped ⚠️**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -366,7 +366,7 @@ async def run_bot(bot: Client, m: Message):
             f.write('\n'.join(videos))
         await m.reply_document(document=txt_file,caption="Here is your txt file.")
         os.remove(txt_file)
-@bot.on_message(filters.command(["legend"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["legend"]) & filters.chat(-1002049701525))
 async def txt_handler(bot: Client, m: Message):
     editable  = await m.reply_text("Hey I can Extract Video So Send Me the file that contains Name:link") 
     input0: Message = await bot.listen(editable.chat.id)
@@ -542,7 +542,7 @@ async def txt_handler(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("That's it ❤️")
 
-@bot.on_message(filters.command(["luminant"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["luminant"]) & filters.chat(-1002049701525))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hey Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -717,7 +717,7 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("That's it ❤️")
 
-@bot.on_message(filters.command(["king"]) & filters.chat(-1002123713069))
+@bot.on_message(filters.command(["king"]) & filters.chat(-1002049701525))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Hey King, Now Send Me Txt File")
     input: Message = await bot.listen(editable.chat.id)
