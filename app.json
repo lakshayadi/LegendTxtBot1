@@ -1,7 +1,7 @@
 {
-  "name": "Lakshay",
+  "name": "Luminant",
   "description": "Download videos from various websites using this telegram bot",
-  "repository": "https://github.com/Lakshay24rohilla/LakshayTxtBot",
+  "repository": "https://github.com/Lucky24rohilla/KingLuminant_1",
   "buildpacks": [
     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
@@ -24,6 +24,6 @@
     },
     "BOT_TOKEN": {
       "description": "Get from BotFather",
-      "value": "7027553426:AAFahXChWsKijBFis8fJxjaTI6VFl6bIM2g"
+      "value": "6440702084:AAHX6_79ATiAm4LyrABvEyOOY4C6RKOpK-Y"
     }
     }
