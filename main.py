@@ -41,7 +41,7 @@ from pyshorteners import Shortener
 
 botStartTime = time.time()
 bot = Client("bot",
-             bot_token= "7156156781:AAFLcv7I2iGMjWbg-tjr0IkWXOV-SKTV8Es", #LegendTxtBot
+             bot_token= "6952960258:AAGSkFr8F46ZExGdBkG9LBn_TQR2d-x8qTI", #LegendTxtBot
              api_id= 20299588,
              api_hash= "f550d6179131c293d658f15f8c24f594")
 
