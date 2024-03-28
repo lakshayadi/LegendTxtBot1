@@ -45,9 +45,9 @@ bot = Client("bot",
              api_id= 20299588,
              api_hash= "f550d6179131c293d658f15f8c24f594")
 
-@bot.on_message(filters.command(["start"]) & filters.chat(-1002049701525))
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"You Have These Commands\n1) /legend\n2) /luminant\n3) /king")
+    editable = await m.reply_text(f"Yes I am Active You Can Use Me")
 
 
 @bot.on_message(filters.command("stop") & filters.chat(-1002049701525))
@@ -535,7 +535,6 @@ async def txt_handler(bot: Client, m: Message):
                 await m.reply_text(f"**Failed To Download ❌**\n**Name** - {name}\n**Link** - `{urlm}`")
                 if "NoLinkFound" != url:
                  count+=1
-                await bot.send_message(log_channel, f"**Failed To Download ❌**\n**Name** - {name}\n**Link** - {url}\n**Error** - `{e}`")
                 time.sleep(20)
                 continue
     except Exception as e:
@@ -710,7 +709,6 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_text(f"**Failed To Download ❌**\n**Name** - {name}\n**Link** - `{url}`")
                 if "NoLinkFound" != url:
                  count+=1
-                await bot.send_message(log_channel, f"**Failed To Download ❌**\n**Name** - {name}\n**Link** - {url}\n**Error** - `{e}`")
                 time.sleep(3)
                 continue
     except Exception as e:
